@@ -16,6 +16,7 @@ sudo pip3 install virtualenv
 ```sh
 virtualenv -p python3 venv
 ```
+If you're having trouble completing this step, try upgrading virtualenv first `pip3 install --upgrade virtualenv`
 
 * Activate the virtualenv
 
@@ -27,6 +28,12 @@ source venv/bin/activate
 
 ```
 pip3 install -r requirements.txt
+```
+
+* Run the server
+
+```
+pip3 manage.py runserver
 ```
 
 ## The challenge
