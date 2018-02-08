@@ -1,6 +1,7 @@
 from django.urls import path
+from .views import calculate
 
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
+    path('calculate/', calculate, name="calculate"),
 ]

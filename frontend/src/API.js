@@ -1,11 +1,9 @@
 import request from "axios"
 
-export const calculate = () => {
+export const calculate = (savingsAmount, interestRate) => {
 	return request
 		.post("/calculate/", {
-			sap: 1337
-		})
-		.then(res => {
-			console.log(`👨‍🌾 => `, res)
+			savingsAmount,
+			interestRate
 		})
 }

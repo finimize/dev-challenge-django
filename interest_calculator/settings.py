@@ -25,7 +25,7 @@ SECRET_KEY = '#7#e=$ri5dbc)w--0a1vmw%(cf$5t@0n3&8-^4hk74gf21bf95'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'interest_calculator'
 ]
 
 MIDDLEWARE = [
@@ -45,7 +46,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'interest_calculator.middleware.dev_cors_middleware'
 ]
 
 ROOT_URLCONF = 'interest_calculator.urls'
