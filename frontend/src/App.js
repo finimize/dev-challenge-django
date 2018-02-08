@@ -4,22 +4,32 @@ import "./App.css"
 
 class App extends Component {
 	state = {
+		loading: true,
 		result: null
 	}
 
 	componentDidMount() {
-		return calculate(1000, 1)
-			.then(r => this.setState({result: r.data.result}))
+		calculate(1000, 1)
+			.then(r => this.setState({
+            	loading: false,
+                result: r.data.result
+			}))
 	}
 
 	render() {
+	    const {loading, result} = this.state
+
 		return (
 			<div className="App">
 				<header className="App-header">
 					<h1 className="App-title">Finimize dev challenge</h1>
 				</header>
 				<p className="App-intro">
-                    Result: {this.state.result}
+                    {loading ?
+                        'Loading...'
+                    :
+                        `Result: ${result}`
+                    }
 				</p>
 			</div>
 		)
