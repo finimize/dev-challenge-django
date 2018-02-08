@@ -1,6 +1,37 @@
 # Finimize dev challenge
 
-## Part 1
+## Python & Django setup
+
+* Install `python3` via brew
+* Clone the repo
+* cd into repo
+* Install `virtualenv` using `pip3` (think yarn)
+
+```sh
+sudo pip3 install virtualenv
+```
+
+* Create a virtualenv for the project
+
+```sh
+virtualenv -p python3 venv
+```
+
+* Activate the virtualenv
+
+```sh
+source venv/bin/activate
+```
+
+* Install dependencies in the new virtualenv
+
+```
+pip3 install -r requirements.txt
+```
+
+## The challenge
+
+### Part 1
 
 1.
 Create an API POST endpoint that takes 2 input values:
@@ -29,7 +60,7 @@ which concerns how often interest will be payed. Either ‘monthly', ‘quarterl
 4.
 On the front-end, extend the form to take the above value as input, and update the API client.
 
-## Part 2
+### Part 2
 
 5.
 Let the API endpoint also recieve the following input:
