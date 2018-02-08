@@ -35,6 +35,7 @@ pip3 install -r requirements.txt
 ```
 pip3 manage.py runserver
 ```
+* Server should be running at http://localhost:8000 🚀
 
 ## The challenge
 
