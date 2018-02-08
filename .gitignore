@@ -1,0 +1,8 @@
+venv
+.DS_Store
+static
+.vscode
+**/__pycache__/**
+.coverage
+schema.json
+.idea
