@@ -16,6 +16,7 @@ sudo pip3 install virtualenv
 ```sh
 virtualenv -p python3 venv
 ```
+
 If you're having trouble completing this step, try upgrading virtualenv first `pip3 install --upgrade virtualenv`
 
 * Activate the virtualenv
@@ -35,48 +36,35 @@ pip3 install -r requirements.txt
 ```
 pip3 manage.py runserver
 ```
+
 * Server should be running at http://localhost:8000 🚀
 
 ## The challenge
 
-### Part 1
+Create a web-app that shows how much you can expect to make from your savings
+over time.
 
-1.
-Create an API POST endpoint that takes 2 input values:
+The app must satisfy the following Acceptance Criteria (ACs):
 
-* `savings_amount`
-* `interest_rate`
+* It should allow the user to vary the initial savings amount, monthly deposit and interest rate through the UI
+* It should display how much the user's initial savings amount will be worth
+  over the next 50 years, to a monthly precision. This should assume that the monthly amount is paid in each month, and the value rises with the interest rate supplied.
+* It should allow the user to select how often interest is paid - either 'Monthly', 'Quarterly' or 'Annually'
+* It should allow the user to optionally select another currency to display the results in. If this is selected, it should convert the results using the latest exchange rate from GBP via a 3rd party API (e.g. [Fixer](http://fixer.io/))
+* All calculations must take place server-side, and all monthly projection data should be returned via an endpoint
+* The calculations must be triggered onChange of any input, to give live feedback on the input data. The performance (try the slider) should be reasonable.
+* You should manage app state using Redux (even though it is arguably overkill in this particular case)
 
-The API should calculate the value achieved after 12 months of saving when interested is payed monthly.
-Bonus points: Use TDD
+### Our Guidance
 
-2.
-Create a react app that has a form with 2 input fields:
+The challenge should not take any more than 2-4 hours. You do not need to complete the challenge in one go.
 
-* `savingsAmount`
-* `interestRate`
+We are keen to see how much you think is enough, and how much would go into a Minimum Viable Product. As a guide, elegant and simple wins over feature rich every time.
 
-upon submit, then form should call the API and display the result.
+Do you test drive your code? This is something we value - any indicator of BDD/TDD would make us smile.
 
-3.
-Extend the API to take another input field:
+Although the API might be returning relatively straightforward content, please try and write the API code as if you were building something more complex. We would like to gain an idea of how you would go about structuring API code.
 
-* `interest_payout_frequency`
+Feel free to make any changes to the UI you see fit.
 
-which concerns how often interest will be payed. Either ‘monthly', ‘quarterly' or ‘annually’. Remember to add proper input validation
-
-4.
-On the front-end, extend the form to take the above value as input, and update the API client.
-
-### Part 2
-
-5.
-Let the API endpoint also recieve the following input:
-`salary`
-Add this value to the calc
-
-6.
-Extend the front-end to take the `salary` field.
-
-7.
-Let the API calculate what the total amount becomes after 50 years
+When you are finished, you should send us a link to the codebase, preferably via git (e.g. github) showing multiple commits, so we can see its evolution.
