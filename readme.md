@@ -31,13 +31,19 @@ source venv/bin/activate
 pip3 install -r requirements.txt
 ```
 
-* Run the server
-
 ```
-pip3 manage.py runserver
+python3 manage.py runserver
 ```
 
 * Server should be running at http://localhost:8000 🚀
+
+
+ ## Client setup
+
+ * cd into `frontend` and run `yarn install`
+
+ * Run `yarn start`
+
 
 ## The challenge
 

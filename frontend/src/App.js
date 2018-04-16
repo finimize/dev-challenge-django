@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { calculate } from "./API"
+import InputGraphSection from './Components/InputGraphSection'
 import "./App.css"
 
 class App extends Component {
@@ -24,13 +25,11 @@ class App extends Component {
 				<header className="App-header">
 					<h1 className="App-title">Finimize dev challenge</h1>
 				</header>
-				<p className="App-intro">
                     {loading ?
                         'Loading...'
                     :
-                        `Result: ${result}`
+					 	<InputGraphSection {...{result}}/>
                     }
-				</p>
 			</div>
 		)
 	}
