@@ -35,14 +35,16 @@ pip3 install -r requirements.txt
 python3 manage.py runserver
 ```
 
-* Server should be running at http://localhost:8000 🚀
+* Server should be running at http://localhost:8000
 
 
  ## Client setup
 
  * cd into `frontend` and run `yarn install`
 
- * Run `yarn start`
+ * Run `yarn start`. 
+
+The webapp should now be running at http://localhost:3000 🚀
 
 
 ## The challenge
