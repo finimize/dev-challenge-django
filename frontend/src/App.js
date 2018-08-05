@@ -4,35 +4,65 @@ import InputGraphSection from './Components/InputGraphSection'
 import "./App.css"
 
 class App extends Component {
-	state = {
-		loading: true,
-		result: null
-	}
+  state = {
+    loading: true,
+    result: null,
+    interestRate: 4.0,
+    monthlyDeposit: 0.0,
+    savingsAmount: 0.0,
+    freqInterest: "yearly"
+  }
 
-	componentDidMount() {
-		calculate(1000, 1)
-			.then(r => this.setState({
-            	loading: false,
-                result: r.data.result
-			}))
-	}
+  update() {
+    const { interestRate, monthlyDeposit, savingsAmount, freqInterest } = this.state;
+    calculate(savingsAmount, interestRate, monthlyDeposit, freqInterest)
+      .then(r => this.setState({
+        loading: false,
+        result: r.data.result
+      }))
+  }
 
-	render() {
-	    const {loading, result} = this.state
+  componentDidMount() {
+    this.update()
+  }
 
-		return (
-			<div className="App">
-				<header className="App-header">
-					<h1 className="App-title">Finimize dev challenge</h1>
-				</header>
-                    {loading ?
-                        'Loading...'
-                    :
-					 	<InputGraphSection {...{result}}/>
-                    }
-			</div>
-		)
-	}
+  interestRateChanged(interestRate) {
+    this.setState({interestRate}, () => {this.update()})
+  }
+
+  savingsAmountChanged(savingsAmount) {
+    this.setState({savingsAmount}, () => {this.update()})
+  }
+
+  monthlyDepositChanged(monthlyDeposit) {
+    this.setState({monthlyDeposit}, () => {this.update()})
+  }
+
+  freqInterestChanged(freqInterest) {
+    this.setState({freqInterest}, () => {this.update()})
+  }
+
+  render() {
+      const {loading, result} = this.state
+
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1 className="App-title">Finimize dev challenge</h1>
+        </header>
+        {loading ?
+            'Loading...'
+            :
+            <InputGraphSection
+              interestRateChanged={v => this.interestRateChanged(v)}
+              savingsAmountChanged={v => this.savingsAmountChanged(v)}
+              monthlyDepositChanged={v => this.monthlyDepositChanged(v)}
+              freqInterestChanged={v => this.freqInterestChanged(v)}
+              {...{result}}/>
+        }
+      </div>
+    )
+  }
 }
 
 export default App
