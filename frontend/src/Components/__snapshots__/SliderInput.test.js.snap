@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SliderInput renders correctly 1`] = `
+<div
+  className="fmz-slider"
+>
+  <p>
+    %
+  </p>
+  <input
+    max={10}
+    min={0}
+    onChange={[Function]}
+    step={0.25}
+    type="range"
+    value={undefined}
+  />
+</div>
+`;

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioInput renders correctly 1`] = `
+<form>
+  <div>
+    <label>
+      <input
+        checked={false}
+        onChange={[Function]}
+        type="radio"
+        value="monthly"
+      />
+      monthly
+    </label>
+  </div>
+  <div>
+    <label>
+      <input
+        checked={false}
+        onChange={[Function]}
+        type="radio"
+        value="quarterly"
+      />
+      quarterly
+    </label>
+  </div>
+  <div>
+    <label>
+      <input
+        checked={false}
+        onChange={[Function]}
+        type="radio"
+        value="yearly"
+      />
+      yearly
+    </label>
+  </div>
+</form>
+`;
