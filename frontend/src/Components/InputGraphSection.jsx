@@ -1,9 +1,9 @@
-import React, { Component } from "react"
-import CurrencyInput from "./CurrencyInput"
-import SliderInput from "./SliderInput"
-import RadioInput from "./RadioInput"
-import DisplayGraph from "./DisplayGraph"
-import "./InputGraphSection.css"
+import React, { Component } from 'react';
+import CurrencyInput from './CurrencyInput';
+import SliderInput from './SliderInput';
+import RadioInput from './RadioInput';
+import DisplayGraph from './DisplayGraph';
+import './InputGraphSection.css';
 
 export default class InputGraphSection extends Component {
   render() {
@@ -12,22 +12,26 @@ export default class InputGraphSection extends Component {
       monthlyDepositChanged,
       result,
       savingsAmountChanged,
-      freqInterestChanged
-    } = this.props
+      freqInterestChanged,
+    } = this.props;
 
     return (
       <div>
         <div className="financial-inputs">
-          <p className="input-label">How much have you saved?</p>
+          <p className="input-label">
+How much have you saved?
+          </p>
           <CurrencyInput onChange={savingsAmountChanged} defaultValue={0} />
 
-          <p className="input-label">How much will you save each month?</p>
+          <p className="input-label">
+How much will you save each month?
+          </p>
           <CurrencyInput onChange={monthlyDepositChanged} defaultValue={0} />
 
           <p className="input-label">
             How often will you earn interest?
           </p>
-          <RadioInput onChange={freqInterestChanged} defaultValue="yearly"/>
+          <RadioInput onChange={freqInterestChanged} defaultValue="yearly" />
 
           <p className="input-label">
             How much interest will you earn during this time?
@@ -38,6 +42,6 @@ export default class InputGraphSection extends Component {
           <DisplayGraph data={result} />
         </div>
       </div>
-    )
+    );
   }
 }

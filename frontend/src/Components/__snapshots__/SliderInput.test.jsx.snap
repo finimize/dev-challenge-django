@@ -5,6 +5,7 @@ exports[`SliderInput renders correctly 1`] = `
   className="fmz-slider"
 >
   <p>
+    0
     %
   </p>
   <input
@@ -13,7 +14,7 @@ exports[`SliderInput renders correctly 1`] = `
     onChange={[Function]}
     step={0.25}
     type="range"
-    value={undefined}
+    value={0}
   />
 </div>
 `;

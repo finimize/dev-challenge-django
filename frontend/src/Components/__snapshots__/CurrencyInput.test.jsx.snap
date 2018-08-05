@@ -2,16 +2,15 @@
 
 exports[`CurrencyInput renders correctly 1`] = `
 <div
-  className="currency-input "
+  className="currency-input default-value"
 >
   <span>
     £
   </span>
   <input
     onChange={[Function]}
-    onFocus={[Function]}
     type="text"
-    value={undefined}
+    value={0}
   />
 </div>
 `;

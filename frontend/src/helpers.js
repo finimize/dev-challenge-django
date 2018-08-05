@@ -1,3 +1,3 @@
-export function isValid(value) {
-  return value >= 0
+export default function isValid(value) {
+  return !Number.isNaN(value) && value >= 0;
 }

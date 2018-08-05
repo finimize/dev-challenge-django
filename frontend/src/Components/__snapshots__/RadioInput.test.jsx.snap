@@ -27,7 +27,7 @@ exports[`RadioInput renders correctly 1`] = `
   <div>
     <label>
       <input
-        checked={false}
+        checked={true}
         onChange={[Function]}
         type="radio"
         value="yearly"
