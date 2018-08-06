@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrencyInput renders correctly 1`] = `
+<div
+  className="currency-input default-value"
+>
+  <span>
+    £
+  </span>
+  <input
+    onChange={[Function]}
+    type="text"
+    value={0}
+  />
+</div>
+`;
