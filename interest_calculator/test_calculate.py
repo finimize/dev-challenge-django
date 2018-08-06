@@ -1,15 +1,20 @@
-import unittest
-from .views import calculate_helper, calculate
 from django.test import Client, TestCase
+from .serializers import calculate_helper
+
 import json
-import pdb
+import unittest
 
 class TestServer(TestCase):
-    def test_response_from_server(self):
+    def test_response_with_empty_data(self):
+        post_data = {}
+        response = self.client.post('/calculate/', json.dumps(post_data), content_type='application/json')
+        self.assertEqual(response.status_code, 400)
+
+    def test_response_with_data(self):
         request = {
-            'savingsAmount': 0,
-            'interestRate': 0,
-            'monthlyDeposit': 0,
+            'savingsAmount': float(0.0),
+            'interestRate': float(0.0),
+            'monthlyDeposit': float(0.0),
             'freqInterest': 'yearly'
         }
 
@@ -19,12 +24,6 @@ class TestServer(TestCase):
         json_response = json.loads(response.content)
         months = json_response['result']
         self.assertEquals(months[0], { 'month' : 1, 'amount': 0 })
-
-    def test_response_from_server_when_params_not_provided(self):
-        request = { }
-
-        response = self.client.post('/calculate/', json.dumps(request), content_type="application/json")
-        self.assertEqual(response.status_code, 400)
 
 class TestCalculate(unittest.TestCase):
     def test_returns_data_for_50_years(self):
