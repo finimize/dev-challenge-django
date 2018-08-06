@@ -1,16 +1,21 @@
-from django.http import JsonResponse, HttpResponseBadRequest
-from django.views.decorators.http import require_POST
-from django.views.decorators.csrf import csrf_exempt
-import json
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
 
-@require_POST
-@csrf_exempt
-def calculate(request):
-    params = json.loads(request.body)
-    savings_amount = params.get('savingsAmount', None)
-    interest_rate = params.get('interestRate', None)
+from .serializers import calculate_helper, CalculateSerializer
+import pdb
 
-    if savings_amount is None or interest_rate is None:
-        return HttpResponseBadRequest('Required parameters are not provided')
+class CalculateView(APIView):
+    def post(self, request):
+        serializer = CalculateSerializer(data=request.data)
 
-    return JsonResponse({'result': 1000})
+        if serializer.is_valid():
+            result = calculate_helper(
+                float(serializer.validated_data['savingsAmount']),
+                float(serializer.validated_data['monthlyDeposit']),
+                float(serializer.validated_data['interestRate']),
+                serializer.validated_data['freqInterest'])
+
+            return Response({'result': result})
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
