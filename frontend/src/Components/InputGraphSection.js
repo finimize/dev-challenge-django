@@ -5,6 +5,11 @@ import DisplayGraph from "./DisplayGraph"
 import "./InputGraphSection.css"
 
 export default class InputGraphSection extends Component {
+  onChange = (event) => {
+    console.log('onChange', event.target.tagName)
+    this.setState({})
+  }
+
   render() {
     const { result } = this.props
 
@@ -21,6 +26,15 @@ export default class InputGraphSection extends Component {
             How much interest will you earn per year?
           </p>
           <SliderInput defaultValue={4} />
+
+          <p className="input-label">
+            When will interest be paid out?
+          </p>
+          <select onChange={this.onChange}>
+            <option value="monthly">Monthly</option>
+            <option value="quarterly">Quarterly</option>
+            <option selected value="yearly">Yearly</option>
+          </select>?
         </div>
         <div className="financial-display">
           {/*We have included some sample data here, you will need to replace this

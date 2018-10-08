@@ -42,9 +42,26 @@ python3 manage.py runserver
 
  * cd into `frontend` and run `yarn install`
 
- * Run `yarn start`. 
+ * Run `yarn start`.
 
 The webapp should now be running at http://localhost:3000 🚀
+
+## TODO:
+- Unit tests for backend
+- Change in inputs change state and call service which posts to API
+- Decide whether or not to use unistore
+- Loader on screen
+
+
+```python
+
+increment_interval_months = 12
+incremental_interest_rate = (interest_rate / increment_interval_months) + 1
+for i in range(total_months):
+	current = prev + recurring_deposit
+	if month % increment_interval_months:
+		current += current * incremental_interest_rate
+```
 
 
 ## The challenge
