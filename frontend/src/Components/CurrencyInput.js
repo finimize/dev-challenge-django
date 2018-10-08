@@ -8,13 +8,15 @@ export default class CurrencyInput extends Component {
 
 		this.state = {
 			hasFocus: false,
-			value: props.defaultValue
+			value: props.defaultValue,
+			valid: true
 		}
 	}
 
 	handleChange(e) {
 		const value = e.target.value
-		this.setState({value})
+		const valid = e.target.validity.valid
+		this.setState({value, valid})
 	}
 
 	handleFocus(e) {
@@ -26,12 +28,19 @@ export default class CurrencyInput extends Component {
 	render() {
 		const { defaultValue } = this.props
 		const { value } = this.state
+		const style = {}
+		if (!this.state.valid) {
+			style.borderColor = 'red';
+		}
 
 		return (
 			<div className={`currency-input ${defaultValue !== undefined ? 'default-value' : ''}`}>
 				<span>£</span>
-				<input type="text"
+				<input type="number"
 					value={value}
+					min="0.00"
+					step="0.01"
+					style={style}
 					onChange={this.handleChange.bind(this)}
 					onFocus={this.handleFocus.bind(this)}/>
 			</div>

@@ -24,7 +24,7 @@ class App extends Component {
 			<div className="App">
 				<header className="App-header">
 					<h1 className="App-title">Finimize dev challenge</h1>
-					<ul><li><a style={{color:"white"}} href="/coverage/interest_calculator_views_py.html">Coverage</a></li></ul>
+					<ul><li><a style={{color:"white"}} href="/coverage/interest_calculator_views_py.html">🔥 Coverage</a></li></ul>
 				</header>
                     {loading ?
                         'Loading...'

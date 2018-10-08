@@ -9,10 +9,13 @@ def calculate(request):
     print('here')
     params = json.loads(request.body)
     print(params)
-    savings_amount = params.get('savingsAmount', None)
+    initial_deposit = params.get('initialDeposit', None)
+    monthly_deposit = params.get('monthlyDeposit', None)
     interest_rate = params.get('interestRate', None)
+    payout_frequency_in_months = params.get('payoutFrequencyInMonths', None)
 
-    if savings_amount is None or interest_rate is None:
+    if initial_deposit is None or interest_rate is None:
         return HttpResponseBadRequest('Required parameters are not provided')
 
-    return JsonResponse({'result': 1000})
+    out = [0 for i in range(50 * 12)]
+    return JsonResponse({'data': out})

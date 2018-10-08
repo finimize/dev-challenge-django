@@ -55,12 +55,12 @@ The webapp should now be running at http://localhost:3000 🚀
 
 ```python
 
-increment_interval_months = 12
-incremental_interest_rate = (interest_rate / increment_interval_months) + 1
+payout_frequency_in_months = 12
+incremental_interest_rate = (interest_rate / payout_frequency_in_months) + 1
 for i in range(total_months):
 	current = prev + recurring_deposit
-	if month % increment_interval_months:
-		current += current * incremental_interest_rate
+	if month % payout_frequency_in_months:
+		current *= incremental_interest_rate
 ```
 
 
