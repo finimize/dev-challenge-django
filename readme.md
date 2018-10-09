@@ -46,24 +46,6 @@ python3 manage.py runserver
 
 The webapp should now be running at http://localhost:3000 🚀
 
-## TODO:
-- Unit tests for backend
-- Change in inputs change state and call service which posts to API
-- Decide whether or not to use unistore
-- Loader on screen
-
-
-```python
-
-payout_frequency_in_months = 12
-incremental_interest_rate = (interest_rate / payout_frequency_in_months) + 1
-for i in range(total_months):
-	current = prev + recurring_deposit
-	if month % payout_frequency_in_months:
-		current *= incremental_interest_rate
-```
-
-
 ## The challenge
 
 Create a web-app that shows how much you can expect to make from your savings
