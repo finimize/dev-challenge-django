@@ -15,15 +15,18 @@ export default class SliderInput extends Component {
 	handleChange(e) {
 		const value = e.target.value
 		this.setState({value})
+		this.props.onChange(e)
 	}
 
 	render() {
+		const { name } = this.props
 		const { value } = this.state
 
 		return (
 			<div className="fmz-slider">
 				<p>{value}%</p>
 				<input type="range"
+					name={name}
 					value={value}
 					min={0}
 					max={10}

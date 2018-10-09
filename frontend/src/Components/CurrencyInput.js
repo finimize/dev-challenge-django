@@ -14,9 +14,13 @@ export default class CurrencyInput extends Component {
 	}
 
 	handleChange(e) {
+		const name = e.target.name
 		const value = e.target.value
 		const valid = e.target.validity.valid
 		this.setState({value, valid})
+		if (valid) {
+			this.props.onChange({target: {name, value: parseFloat(value)}})
+		}
 	}
 
 	handleFocus(e) {
@@ -26,7 +30,7 @@ export default class CurrencyInput extends Component {
 	}
 
 	render() {
-		const { defaultValue } = this.props
+		const { defaultValue, name } = this.props
 		const { value } = this.state
 		const style = {}
 		if (!this.state.valid) {
@@ -37,6 +41,7 @@ export default class CurrencyInput extends Component {
 			<div className={`currency-input ${defaultValue !== undefined ? 'default-value' : ''}`}>
 				<span>£</span>
 				<input type="number"
+					name={name}
 					value={value}
 					min="0.00"
 					step="0.01"

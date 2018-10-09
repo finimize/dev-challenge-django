@@ -6,58 +6,46 @@ import "./InputGraphSection.css"
 
 export default class InputGraphSection extends Component {
   onChange = (event) => {
-    console.log('onChange', event.target.tagName)
-    this.setState({})
+    let {name, value} = event.target
+    if (name === 'interestRate') {
+      value = parseFloat(value) / 100
+      return this.props.onChange({target: {name, value}})
+    }
+    this.props.onChange(event)
   }
 
   render() {
-    const { result } = this.props
+    const { result, initialValues } = this.props
+    const { initialDeposit, monthlyDeposit, interestRate, payoutFrequencyPerYear } = initialValues
 
     return (
       <div>
         <div className="financial-inputs">
           <p className="input-label">How much have you saved?</p>
-          <CurrencyInput defaultValue={0} />
+          <CurrencyInput name="initialDeposit" onChange={this.onChange} defaultValue={initialDeposit} />
 
           <p className="input-label">How much will you save each month?</p>
-          <CurrencyInput defaultValue={0} />
+          <CurrencyInput name="monthlyDeposit" onChange={this.onChange} defaultValue={monthlyDeposit} />
 
           <p className="input-label">
             How much interest will you earn per year?
           </p>
-          <SliderInput defaultValue={4} />
+          <SliderInput name="interestRate" onChange={this.onChange} defaultValue={interestRate} />
 
           <p className="input-label">
             When will interest be paid out?
           </p>
-          <select onChange={this.onChange}>
-            <option value="monthly">Monthly</option>
-            <option value="quarterly">Quarterly</option>
-            <option selected value="yearly">Yearly</option>
+          <select defaultValue={payoutFrequencyPerYear} name="payoutFrequencyPerYear" onChange={this.onChange}>
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Yearly</option>
           </select>?
         </div>
         <div className="financial-display">
           {/*We have included some sample data here, you will need to replace this
             with your own. Feel free to change the data structure if you wish.*/}
           <DisplayGraph
-            data={[
-              {
-                month: 1,
-                amount: 500
-              },
-              {
-                month: 2,
-                amount: 700
-              },
-              {
-                month: 3,
-                amount: 1000
-              },
-              {
-                month: 4,
-                amount: 1500
-              }
-            ]}
+            data={result}
           />
         </div>
       </div>

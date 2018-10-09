@@ -26,6 +26,29 @@
   font-size: large;
 }
 
+.cta-button {
+  border-radius: 99px;
+  background: #00b2ff;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 25px 35px;
+  margin-left: 10px;
+  line-height: 2px!important;
+  outline: none;
+  display: inline-block;
+  -webkit-transition: 0.123s linear;
+  -o-transition: 0.123s linear;
+  transition: 0.123s linear;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+    -webkit-box-shadow: inset 0px -1px 0px #00b2ff;
+    box-shadow: inset 0px -1px 0px #00b2ff;
+    background: #48C8FF;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
