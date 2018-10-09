@@ -1,0 +1,47 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Coverage</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        	* {
+        		box-sizing: border-box;
+        	}
+        	html, body {
+        		font-family: sans-serif;
+        		font-size: 1rem;
+        		margin: 0;
+        		padding: 30px;
+        		background: #f8f8f8;
+        	}
+
+        	main {
+        		background: white;
+        		padding: 2rem;
+        		border-radius: 3px;
+        		border: 1px solid #ddd;
+        		box-shadow: 0px 0px 16px 2px #dadada;
+        	}
+
+        	p {
+        		text-align: center;
+        	}
+
+        	pre {
+        		background: #d0fbd9;
+        		padding: 1rem;
+        		text-align: left;
+        		font-size: 0.8rem;
+        	}
+        </style>
+    </head>
+    <body>
+		<main>
+			<p>To see the coverage please run the following.</p>
+			<pre>coverage run --source interest_calculator ./manage.py test . && coverage html -d frontend/public/coverage</pre>
+		</main>
+    </body>
+</html>
