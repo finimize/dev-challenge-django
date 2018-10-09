@@ -1,4 +1,5 @@
 venv
+frontend/public/coverage
 .DS_Store
 static
 .vscode
