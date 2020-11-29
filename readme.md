@@ -76,3 +76,17 @@ Although the API might be returning relatively straightforward content, please t
 Feel free to make any changes to the UI you see fit.
 
 When you are finished, you should send us a link to the codebase, preferably via git (e.g. github) showing multiple commits, so we can see its evolution.
+
+### Tooling
+
+The frontend contains some tooling you might be familiar with
+
+#### Typescript
+
+If you like to use Typescript in your workflow, you should get any warnings/errors appear in your terminal after running `yarn start`
+
+#### Prettier
+
+We believe Prettier makes your life easier! There is an example .prettierrc included in the `frontend` directory - feel free to tweak the settings if you'd prefer.
+
+You might need to give your IDE a nudge to pick the settings up - [here's an example](https://stackoverflow.com/a/58669550/4388938) of how to do that with VS Code
