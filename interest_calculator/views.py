@@ -4,6 +4,6 @@ from django.views.decorators.csrf import csrf_exempt
 
 @require_POST
 @csrf_exempt
-def calculate(request):
-    # Just an example
+def interest_data(request):
+    # Just an example! Should be replaced with real calculated data
     return JsonResponse({'result': 1000})
