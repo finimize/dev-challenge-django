@@ -49,33 +49,38 @@ The webapp should now be running at http://localhost:3000 🚀
 
 ## The challenge
 
-Create a web-app that shows how much you can expect to make from your savings
-over time.
+Create a web-app that shows how much you can expect to make from your savings over time.
 
 The app must satisfy the following Acceptance Criteria (ACs):
 
 * It should allow the user to vary the initial savings amount, monthly deposit and interest rate through the UI
-* It should display how much the user's initial savings amount will be worth
-  over the next 50 years, to a monthly precision. This should assume that the monthly amount is paid in each month, and the value rises with the interest rate supplied.
-* It should allow the user to select how often interest is paid - either 'Monthly', 'Quarterly' or 'Annually'
-* It should allow the user to optionally select another currency to display the results in. If this is selected, it should convert the results using the latest exchange rate from GBP via a 3rd party API (e.g. [Fixer](http://fixer.io/))
+* It should display how much the user's initial savings amount will be worth over the next 50 years. This should assume that the monthly amount is paid in each month, and the value rises with the interest rate supplied. There are resources online about calculating compound interest totals - e.g. [Wikipedia](https://en.wikipedia.org/wiki/Compound_interest#Investing:_monthly_deposits)
 * All calculations must take place server-side, and all monthly projection data should be returned via an endpoint
 * The calculations must be triggered onChange of any input, to give live feedback on the input data. The performance (try the slider) should be reasonable.
-* You should manage app state using Redux (even though it is arguably overkill in this particular case)
 
 ### Our Guidance
 
 The challenge should not take any more than 2-4 hours. You do not need to complete the challenge in one go.
 
-We are keen to see how much you think is enough, and how much would go into a Minimum Viable Product. As a guide, elegant and simple wins over feature rich every time.
+These are some qualities we value:
+ * Well-modularised, robust and clearly-written code
+ * Maintainability. Another team member should be able to easily work with your code after you've finished.
+ * Single Responsibility Principle
+ * A well-organised codebase
 
-Do you test drive your code? This is something we value - any indicator of BDD/TDD would make us smile.
+An outline UI has been provided, as well as an example endpoint on the server. How you connect these and structure logic is up to you! Feel free to make changes to any of the code provided (including the UI) if you wish.
 
-Although the API might be returning relatively straightforward content, please try and write the API code as if you were building something more complex. We would like to gain an idea of how you would go about structuring API code.
+We have chosen to include a basic design system on the client, to give you an idea of how we like to build UIs. For this challenge we have used [Chakra JS](https://chakra-ui.com/docs/getting-started). If you're not familiar with such systems, hopefully this won't be too steep a learning curve. The docs will give you details of all the components/props you can use, but as a head-start, you can pass in styling props to the components including margins/padding etc like this:
 
-Feel free to make any changes to the UI you see fit.
+```
+// This produces a Box (styled div) with a top margin of 2, padding of 3 and a black background colour.
+// Colours and spacing properties are defined in `themes/index.tsx`
+<Box mt={2} p={3} bg='black'>
+```
 
-When you are finished, you should send us a link to the codebase, preferably via git (e.g. github) showing multiple commits, so we can see its evolution.
+Although the API might be relatively straightforward, please try and write the API code as if you were building something more complex. We would like to gain an idea of how you would go about structuring API code.
+
+Other than that, feel free to take the challenge in any directions you feel best showcase your strengths!
 
 ### Tooling
 
@@ -83,7 +88,9 @@ The frontend contains some tooling you might be familiar with
 
 #### Typescript
 
-If you like to use Typescript in your workflow, you should get any warnings/errors appear in your terminal after running `yarn start`
+If you like to use Typescript in your workflow, you should get any warnings/errors appear in your terminal after running `yarn start`.
+
+We believe strong TS typing will make your code much more robust.
 
 #### Prettier
 
