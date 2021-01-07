@@ -1,6 +1,6 @@
 venv
 .DS_Store
-static
+static/*
 .vscode
 **/__pycache__/**
 .coverage
