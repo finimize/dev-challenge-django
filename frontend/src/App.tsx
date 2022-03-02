@@ -6,6 +6,11 @@ import DefaultLayout from './components/layouts/Default'
 import LineChart from './components/LineChart'
 import theme from './theme'
 import axios from 'axios';
+import { Input } from '@chakra-ui/react'
+import {
+    FormControl,
+    FormLabel,
+  } from '@chakra-ui/react'
 
 const defaultTheme = extendTheme(theme)
 const baseURL = "http://localhost:8000"
@@ -20,7 +25,7 @@ function App() {
   const [result, setResult] = useState(0);
 
   const graphData = {
-    xAxis: Array.from({length: installments}, (v,i) => i),
+    xAxis: Array.from({length: installments+1}, (v,i) => i),
     yAxis: interestInstallments,
   }
 
@@ -65,36 +70,33 @@ function App() {
           />
         </Container>
         <Container p={4}>
-          <form>
-            <label>Initial Deposit: {principalDeposit}</label>
-            <br></br>
-            <input
-              className="input"
-              value={principalDeposit}
-              name="principalDeposit"
-              onChange={handlePrincipalDeposit}
-            />
-            <br></br>
-            <label>Monthly Deposit: {monthlyDeposit}</label>
-            <br></br>
-            <input
-              className="input"
-              value={monthlyDeposit}
-              name="monthlyDeposit"
-              onChange={handleMonthlyDeposit}
-            />
-            <br></br>
-            <label>Interest Rate: {interestRate} ({interestRate*100}%)</label>
-            <br></br>
-            <input
-              className="input"
-              value={interestRate*100}
-              name="interestRate"
-              onChange={handleInterestRate}
-            />
-            <br></br>
-          </form>
-
+            <FormControl maxW={60}>
+                <FormLabel as='legend'>Initial Deposit: {principalDeposit}</FormLabel>
+                <Input
+                className="input"
+                value={principalDeposit}
+                name="principalDeposit"
+                onChange={handlePrincipalDeposit}
+                />
+            </FormControl>
+            <FormControl maxW={60}>
+                <FormLabel as='legend'>Monthly Deposit: {monthlyDeposit}</FormLabel>
+                <Input
+                    className="input"
+                    value={monthlyDeposit}
+                    name="monthlyDeposit"
+                    onChange={handleMonthlyDeposit}
+                />
+            </FormControl>
+            <FormControl maxW={60}>
+                <FormLabel as='legend'>Interest Rate: {interestRate} ({interestRate*100}%)</FormLabel>
+                <Input
+                    className="input"
+                    value={interestRate*100}
+                    name="interestRate"
+                    onChange={handleInterestRate}
+                />
+            </FormControl>
           <div>
               Result:
               <span>{result.toFixed(2)}</span>
