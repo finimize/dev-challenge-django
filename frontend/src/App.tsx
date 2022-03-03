@@ -5,7 +5,7 @@ import { Container } from '@chakra-ui/react'
 import DefaultLayout from './components/layouts/Default'
 import LineChart from './components/LineChart'
 import theme from './theme'
-import axios from 'axios';
+import axios from 'axios'
 import { Input } from '@chakra-ui/react'
 import {
     FormControl,
@@ -17,12 +17,11 @@ const baseURL = "http://localhost:8000"
 const installments = 50;
 
 function App() {
-  const [principalDeposit, setPrincipalDeposit] = useState(0);
-  const [monthlyDeposit, setMonthlyDeposit] = useState(0);
-  const [interestRate, setInterestRate] = useState(0);
+  const [principalDeposit, setPrincipalDeposit] = useState(0 as number);
+  const [monthlyDeposit, setMonthlyDeposit] = useState(100.00 as number);
+  const [interestRate, setInterestRate] = useState(0 as number);
   
   const [interestInstallments, setInterestInstallments] = useState([]);
-  const [result, setResult] = useState(0);
 
   const graphData = {
     xAxis: Array.from({length: installments+1}, (v,i) => i),
@@ -33,8 +32,8 @@ function App() {
   const handleMonthlyDeposit = ({ target }: { target: any }) => setMonthlyDeposit(target.value);
   const handleInterestRate = ({ target }: { target: any }) => {
       var value = target.value;
-      value = value/100;
-      setInterestRate(value.toFixed(2));
+      value = (value/100).toFixed(2);
+      setInterestRate(value as number);
   };
   
   useEffect(() => {
@@ -50,8 +49,6 @@ function App() {
             .then( (resp) => {
                 const interestData = resp.data['interest_over_installment'];
                 setInterestInstallments(interestData);
-                const lastResult = interestData.pop();
-                setResult(lastResult)
             });
     }
     
@@ -79,6 +76,7 @@ function App() {
                 onChange={handlePrincipalDeposit}
                 />
             </FormControl>
+            <br/>
             <FormControl maxW={60}>
                 <FormLabel as='legend'>Monthly Deposit: {monthlyDeposit}</FormLabel>
                 <Input
@@ -88,19 +86,16 @@ function App() {
                     onChange={handleMonthlyDeposit}
                 />
             </FormControl>
+            <br/>
             <FormControl maxW={60}>
-                <FormLabel as='legend'>Interest Rate: {interestRate} ({interestRate*100}%)</FormLabel>
+                <FormLabel as='legend'>Interest Rate: {interestRate} ({(interestRate*100).toFixed(2)}%)</FormLabel>
                 <Input
                     className="input"
-                    value={interestRate*100}
+                    value={Math.round(interestRate*100)}
                     name="interestRate"
                     onChange={handleInterestRate}
                 />
             </FormControl>
-          <div>
-              Result:
-              <span>{result.toFixed(2)}</span>
-          </div>
         </Container>
       </DefaultLayout>
     </ChakraProvider>
