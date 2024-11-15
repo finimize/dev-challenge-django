@@ -87,7 +87,7 @@ Although the API might be relatively straightforward, please try and write the A
 
 - How you approached the challenge
 - What bits of your solution you like
-- What bits of your solution you’d like to improve upon
+- What bits of your solution you’d like to improve upon or would develop next
 
 Please also attach an image/gif of the finished product.
 
