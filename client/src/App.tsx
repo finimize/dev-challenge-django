@@ -9,10 +9,10 @@ import theme from './theme'
 const defaultTheme = extendTheme(theme)
 
 // Note: This is just for example purposes
-// should be replaced with real data from the server
+// should be replaced with real data from the backend
 const tempData = {
-    xAxis: [0, 1, 2, 3, 4, 5],
-    yAxis: [100, 150, 180, 210, 240, 350],
+    xAxis: ['0', '1', '2', '3', '4', '5'],
+    yAxis: ['100', '150', '180', '210', '240', '350'],
 }
 
 function App() {
