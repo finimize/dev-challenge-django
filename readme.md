@@ -69,6 +69,7 @@ These are some qualities we value:
 - Maintainability. Another team member should be able to easily work with your code after you've finished.
 - Single Responsibility Principle
 - A well-organised codebase
+- Simple, elegant but fun UX
 
 An outline UI has been provided, as well as some simple setup logic on the server. How you connect these and structure logic is up to you! Feel free to make changes to any of the code provided (including the UI) if you wish.
 
@@ -88,7 +89,15 @@ Although the API might be relatively straightforward, please try and write the A
 - What bits of your solution you like
 - What bits of your solution you’d like to improve upon
 
-Plese also attach an image/gif of the finished product.
+Please also attach an image/gif of the finished product.
+
+### Using AI
+
+We believe a modern developer workflow should make use of the best tools available, so we would encourage you to use AI tools for this challenge - hopefully it saves you some time!
+
+At the time of writing we are using [CursorAI](https://www.cursor.com/). It has a free trial so you're welcome to give it a go if you haven't already tried it.
+
+Bear in mind that when using AI, you are still responsibility for the quality of the output. The same principles mentioned above still apply. And we will still expect to be able to discuss the end solution, so please ensure you're familiar with what's been committed.
 
 ### Tooling
 
