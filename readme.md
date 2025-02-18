@@ -83,6 +83,8 @@ We have chosen to include a basic design system on the client, to give you an id
 
 Although the API might be relatively straightforward, please try and write the API code as if you were building something more complex. We would like to gain an idea of how you would go about structuring API code.
 
+Other than the above AC, feel free to take the challenge in any direction you feel best showcase your strengths!
+
 **Once complete**, drop us a brief note (either an email, or in the readme somewhere) explaining:
 
 - How you approached the challenge
