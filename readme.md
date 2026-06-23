@@ -5,24 +5,16 @@ order to form the submission for the challenge. Once cloned, it will give you a 
 
 ## Python & Django setup
 
-- Install `python3` via brew
+- Requires Python 3.10+ (Django 5.2 requirement)
 - Clone the repo
 - cd into repo
-- Install `virtualenv` using `pip3` (think yarn)
+- Create a virtualenv for the project (use `python3` to bootstrap it — macOS ships Python 3 only as `python3`)
 
 ```sh
-sudo pip3 install virtualenv
+python3 -m venv venv
 ```
 
-- Create a virtualenv for the project
-
-```sh
-virtualenv -p python3 venv
-```
-
-If you're having trouble completing this step, try upgrading virtualenv first `pip3 install --upgrade virtualenv`
-
-- Activate the virtualenv
+- Activate the virtualenv — from here on `python` and `pip` refer to the venv
 
 ```sh
 source venv/bin/activate
@@ -31,22 +23,43 @@ source venv/bin/activate
 - Install dependencies in the new virtualenv
 
 ```
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ```
-python3 manage.py runserver
+python manage.py runserver
 ```
 
 - Server should be running at http://localhost:8000
 
 ## Client setup
 
-- cd into `client` and run `yarn install`
+- cd into `client`
+- Ensure you're using Node 22 (check `.nvmrc`)
 
-- Run `yarn start`.
+```sh
+nvm use
+```
+
+- Enable Corepack so the pinned Yarn version (Yarn 4, see `packageManager` in `package.json`) is used
+
+```sh
+corepack enable
+```
+
+- Run `yarn install`
+- Run `yarn start`
 
 The webapp should now be running at http://localhost:5173 🚀
+
+### Tests
+
+Tests run with [Vitest](https://vitest.dev/) (+ React Testing Library):
+
+```sh
+yarn test        # run once
+yarn test:watch  # watch mode
+```
 
 ## The challenge
 
