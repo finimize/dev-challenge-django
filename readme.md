@@ -103,6 +103,7 @@ Other than the above AC, feel free to take the challenge in any direction you fe
 - How you approached the challenge
 - What bits of your solution you like
 - What bits of your solution you’d like to improve upon or would develop next
+- How you used AI (remember using AI tooling is encouraged, so we want to hear about your approach)
 
 Please also attach an image/gif of the finished product.
 
